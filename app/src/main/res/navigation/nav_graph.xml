@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.fishbowl.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_addPlayersFragment"
+            app:destination="@id/addPlayersFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_creditsFragment"
+            app:destination="@id/creditsFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.example.fishbowl.fragments.ChooseFragment"
+        android:label="fragment_choose"
+        tools:layout="@layout/fragment_choose" >
+        <action
+            android:id="@+id/action_chooseFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_basicQuestionFragment"
+            app:destination="@id/basicQuestionFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_everyoneQuestionFragment"
+            app:destination="@id/everyoneQuestionFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_otherPlayerQuestionFragment"
+            app:destination="@id/otherPlayerQuestionFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_votesFragment"
+            app:destination="@id/votesFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlayersFragment"
+        android:name="com.example.fishbowl.fragments.AddPlayersFragment"
+        android:label="fragment_add_players"
+        tools:layout="@layout/fragment_add_players" >
+        <action
+            android:id="@+id/action_addPlayersFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basicQuestionFragment"
+        android:name="com.example.fishbowl.fragments.BasicQuestionFragment"
+        android:label="fragment_basic_question"
+        tools:layout="@layout/fragment_basic_question" >
+        <action
+            android:id="@+id/action_basicQuestionFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/everyoneQuestionFragment"
+        android:name="com.example.fishbowl.fragments.EveryoneQuestionFragment"
+        android:label="fragment_everyone_question"
+        tools:layout="@layout/fragment_everyone_question" >
+        <action
+            android:id="@+id/action_everyoneQuestionFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherPlayerQuestionFragment"
+        android:name="com.example.fishbowl.fragments.OtherPlayerQuestionFragment"
+        android:label="fragment_other_player_question"
+        tools:layout="@layout/fragment_other_player_question" >
+        <action
+            android:id="@+id/action_otherPlayerQuestionFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditsFragment"
+        android:name="com.example.fishbowl.fragments.CreditsFragment"
+        android:label="fragment_credits"
+        tools:layout="@layout/fragment_credits" >
+        <action
+            android:id="@+id/action_creditsFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.fishbowl.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_questionListFragment"
+            app:destination="@id/questionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/votesFragment"
+        android:name="com.example.fishbowl.fragments.VotesFragment"
+        android:label="fragment_votes"
+        tools:layout="@layout/fragment_votes" >
+        <action
+            android:id="@+id/action_votesFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.fishbowl.fragments.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/questionListFragment"
+        android:name="com.example.fishbowl.fragments.QuestionListFragment"
+        android:label="QuestionListFragment" >
+        <action
+            android:id="@+id/action_questionListFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+</navigation>

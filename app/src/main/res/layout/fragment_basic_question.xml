@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.BasicQuestionFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/tvPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="PLAYERNAME"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="340dp"
+        android:layout_height="260dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper, quam quis finibus dignissim, justo ipsum facilisis elit, sit amet congue lacus dolor nec ex. Maecenas scelerisque iaculis leo non commodo. Praesent ac sagittis lorem. Vestibulum sit amet lectus ac erat gravida interdum at vitae quam. Pellentesque dignissim neque id enim dignissim, ut tempus est fermentum. Maecenas eget auctor dui. Etiam gravida, tortor vel semper sagittis, eros nisi molestie purus, at rutrum lacus lorem non lacus. Phasellus accumsan nibh et lectus scelerisque porttitor. Cras viverra rutrum eros, et iaculis nunc consequat vel. Proin at velit ullamcorper, pretium eros quis, maximus ipsum. Sed metus eros, sagittis id magna ut, tincidunt ultrices purus. Morbi ut elit sed risus accumsan bibendum at et orci. Praesent finibus ex vel sem gravida, vel lobortis ante fringilla. Mauris maximus non tortor vitae tincidunt. "
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayer" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="@color/default_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:text="Doorgaan"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
+    <ImageView
+        android:id="@+id/ivFish"
+        android:layout_width="233dp"
+        android:layout_height="191dp"
+        android:src="@drawable/king"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
