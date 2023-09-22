@@ -9,7 +9,7 @@ import com.example.fishbowl.databinding.QuestionItemBinding
 import com.example.fishbowl.modals.Question
 
 
-class QuestionListAdapter(private val questions: List<Question>, val deleteQuestion: (question: Question) -> Unit) : RecyclerView.Adapter<QuestionListAdapter.ViewHolder>(){
+class QuestionListAdapter(private val questions: List<Question>) : RecyclerView.Adapter<QuestionListAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = QuestionItemBinding.bind(itemView)

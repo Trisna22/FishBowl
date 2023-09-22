@@ -10,13 +10,15 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fishbowl.adapters.QuestionListAdapter
+import com.example.fishbowl.adapters.SwipeToDeleteCallback
 import com.example.fishbowl.databinding.FragmentQuestionListBinding
-import com.example.fishbowl.databinding.FragmentSettingsBinding
 import com.example.fishbowl.modals.Question
 import com.example.fishbowl.viewmodal.GameViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class QuestionListFragment : Fragment() {
 
@@ -26,7 +28,7 @@ class QuestionListFragment : Fragment() {
     private val viewModel: GameViewModel by viewModels();
 
     private val questions = arrayListOf<Question>()
-    private val questionListAdapter = QuestionListAdapter(questions, ::onDeleteQuestion)
+    private val questionListAdapter = QuestionListAdapter(questions)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,11 +42,6 @@ class QuestionListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initViews()
-    }
-
-    private fun onDeleteQuestion(question: Question) {
-
-        Log.d("TEST", "Deleting question...")
     }
 
     private fun initViews() {
@@ -65,8 +62,40 @@ class QuestionListFragment : Fragment() {
         binding.rvQuestions.adapter = questionListAdapter
         binding.rvQuestions.addItemDecoration(DividerItemDecoration(binding.rvQuestions.context, RecyclerView.VERTICAL))
 
+        // Swipe feature to delete.
+        val swipeHandler = object: SwipeToDeleteCallback(context) {
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition;
+
+                // Create option to undo the deletion of question.
+                val snackbar = Snackbar.make(binding.root, "Vraag verwijderd!", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Undo verwijderen", UndoDeleteQuestionListener(questions[position]))
+                snackbar.show()
+
+                viewModel.deleteQuestion(questions[position])
+
+                questionListAdapter.notifyDataSetChanged()
+            }
+        }
+        ItemTouchHelper(swipeHandler).attachToRecyclerView(binding.rvQuestions)
+
         if (questionsType != null) {
             observeQuestions(questionsType)
+        }
+    }
+
+    // When user undoes the deletion of a question.
+    inner class UndoDeleteQuestionListener(question: Question) : View.OnClickListener {
+        private var question: Question? = null
+        init {
+            this.question = question
+        }
+
+        override fun onClick(p0: View?) {
+            viewModel.insertQuestion(this.question!!)
+            Snackbar.make(binding.root, "Ongedaan gemaakt van verwijderen!", Snackbar.LENGTH_SHORT).show();
+            questionListAdapter.notifyDataSetChanged()
         }
     }
 

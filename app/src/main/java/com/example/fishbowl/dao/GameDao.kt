@@ -46,4 +46,7 @@ interface GameDao {
 
     @Delete
     suspend fun deletePlayer(player: Player)
+
+    @Delete
+    suspend fun deleteQuestion(question: Question)
 }

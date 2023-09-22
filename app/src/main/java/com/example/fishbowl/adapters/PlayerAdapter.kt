@@ -20,12 +20,6 @@ class PlayerAdapter (private val players: List<Player>, val deletePlayer: (playe
         fun databind(player: Player, position: Int) {
             binding.tvTitle.text = player.username;
 
-            // Check man/female.
-//            if (player.isWoman) {
-//                binding.cardView.setBackgroundResource(R.color.for_woman)
-//            } else {
-//                binding.cardView.setBackgroundResource(R.color.for_man)
-//            }
 
             // Specialized users
             val name = player.username.lowercase();

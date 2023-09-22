@@ -21,7 +21,7 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
     val questionsPersonal = gameRepository.getAllQuestionsPersonal()
     val questionsEveryone = gameRepository.getAllQuestionsEveryone()
 
-    val questionsForEveryone = gameRepository.getAllQuestionsEveryone()
+    val questionsForEveryone = gameRepository.getAllEveryoneQuestions()
     val questionsForQuiz = gameRepository.getAllQuestionsQuiz()
     val questionsForPersonal = gameRepository.getAllQuestionsForPersonal()
     val questionsForPersonal2 = gameRepository.getAllQuestionsForPersonal2()
@@ -37,9 +37,21 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
         success.value = true
     }
 
+    fun insertQuestion(question: Question) {
+        mainScope.launch {
+            gameRepository.insertQuestion(question)
+        }
+    }
+
     fun deletePlayer(player: Player) {
         mainScope.launch {
             gameRepository.deletePlayer(player)
+        }
+    }
+
+    fun deleteQuestion(question: Question) {
+        mainScope.launch {
+            gameRepository.deleteQuestion(question)
         }
     }
 }

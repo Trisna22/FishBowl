@@ -40,7 +40,18 @@ val questionsEveryone: List<String> = listOf(
     "Wijs aan wie het beste kan liegen, die persoon moet shotten",
     "Wijs aan wie altijd telaat komt, deze mag shotten",
     "Wijs de personen aan die op dit feestje/borrel telaat zijn gekomen, shotten!",
-    "Wijs de persoon aan die altijd goedgelovig is, die mag shotten."
+    "Wijs de persoon aan die altijd goedgelovig is, die mag shotten.",
+    "Iedereen wiens naam begint met een klinker, mag gaan drinken",
+    "Drink als je welleens in het openbaar sex hebt gehad",
+    "Noem allemaal europese hoofdsteden, de eerste die niets weet mag gaan drinken.",
+    "Drink als je welleens hebt gespijbeld",
+    "Doe het spelletje ik ga op reis en ik neem mee ...",
+    "De harigste persoon mag een shotje weggeven",
+    "Iedereen die ooit een beugel heeft gehad mag gaan drinken!",
+    "Iedereen telefoon op tafel, de eerste die af gaat moet het bericht voorlezen en gaan drinken!",
+    "Noem woorden op voor het vrouwelijke geslachtsdeel",
+    "Noem woorden op voor het mannelijke geslachtsdeel",
+    "Noem om de beurt de domste redenen om af te knappen op een date"
 )
 
 val votes: List<String> = listOf(
@@ -81,7 +92,11 @@ val personalQuestions = listOf(
     "{PLAYER}, wat is de laatste keer dat je gehuild hebt?",
     "{PLAYER}, welk advies zou jij je jongere zelf geven?",
     "{PLAYER}, als je kon tijdreizen wat zou je veranderen aan de geschiedenis?",
-    "{PLAYER}, vertel de laatste zonde die je bent begaan."
+    "{PLAYER}, vertel de laatste zonde die je bent begaan.",
+    "{PLAYER} kies iemand uit die een shotje mag doen.",
+    "{PLAYER} laat je zoekgeschiedenis zien",
+    "{PLAYER} tel zo snel mogelijk tot 66, doe dit onder de 30 seconden.",
+    "{PLAYER} je bent niet dronken genoeg, neem maar een shotje!"
 )
 
 val personalQuestionWithOtherPlayer = listOf(
@@ -101,7 +116,14 @@ val personalQuestionWithOtherPlayer = listOf(
     "{PLAYER} geeft {OTHER_PLAYER} zijn/haar telefoon en {OTHER_PLAYER} mag een woord opzoeken in whatsapp.",
     "{PLAYER} geeft {OTHER_PLAYER} zijn/haar telefoon en {OTHER_PLAYER} mag een bericht sturen naar iemand, maar {PLAYER} mag het niet zien.",
     "{PLAYER} geeft {OTHER_PLAYER} zijn/haar telefoon en {OTHER_PLAYER} mag iets plaatsen zijn/haar verhaal. ",
-    "{PLAYER} belt {OTHER_PLAYERS} baas/chef op om te vertellen dat {PLAYER} niet komt werken morgen. Verzin een goed excuus! "
+    "{PLAYER} belt {OTHER_PLAYERS} baas/chef op om te vertellen dat {PLAYER} niet komt werken morgen. Verzin een goed excuus!",
+    "{PLAYER} vs {OTHER_PLAYER} staar in elkaar's ogen en vertel elkaar je slechte grappen. De eerste die lacht, mag gaan drinken.",
+    "{PLAYER} vs {OTHER_PLAYER} noem om de beurt een celebirty met de letter J.",
+    "{PLAYER} vs {OTHER_PLAYER} rap battle!",
+    "{PLAYER} vs {OTHER_PLAYER} duimworsteloorglog!",
+    "{PLAYER} vs {OTHER_PLAYER} noem om de beurt een land dat begint met de letter B.",
+    "{PLAYER} vs {OTHER_PLAYER} armpje drukken, verliezer mag drinken!",
+    "{PLAYER} & {OTHER_PLAYER} jullie mogen brüderschaft shotje doen!"
 )
 
 val quizQuestions = listOf(
@@ -146,7 +168,9 @@ val quizQuestions = listOf(
     "Welk van de volgende groepen bevatten geen celkern?\nPlantaardige cellen, Bacteriën of Schimmels.#Bacteriën, Zij hebben geen celkern en is dus een prokaryoot",
     "Wat is de maximale snelheid op de snelweg tussen 6 en 19 uur?#Zo hard als je wilt natuurlijk, zolang je maar uitkijkt voor flitsers!",
     "Een dokter uit Pumerend heeft broer die monteur is in Amsterdam, maar die monteur uit Amsterdam heeft geen broer die dokter is, hoe ken dat?#Is de zus",
-    "Stel je voor je hebt 3 broertjes, ze heten 2, 3 en 4. Hoe heet de oudste in dit gezin?#Jouw naam..."
+    "Stel je voor je hebt 3 broertjes, ze heten 2, 3 en 4. Hoe heet de oudste in dit gezin?#Jouw naam...",
+    "Welke scheikundige molecuul-symbolen staan voor keukenzout?#NaCl",
+    "In welke stad staat de bekende standbeeld van Jesus?#Rio de Janeiro?"
 )
 
 @Database(entities = [Player::class, Question::class], version = 7, exportSchema = false)
